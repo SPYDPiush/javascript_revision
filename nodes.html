@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodes</title>
+</head>
+<body style="background-color: black; color: #fff;">
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    
+</body>
+
+<script >
+    const div = document.createElement('div')
+
+    const h1 = document.createElement('h1')
+    console.log(div)
+    console.log(h1)
+
+    div.className= 'main'
+    div.id =  Math.round(Math.random() *10 +1)
+    div.setAttribute('title','nodediv')
+    div.style.background = 'green'
+    div.style.padding = '20px'
+   const textnode = document.createTextNode('chai and code')
+   h1.appendChild(textnode)
+   div.appendChild(h1)
+   document.body.appendChild(div);
+
+
+   function createElement(text) {
+    const newdiv = document.createElement('div')
+    newdiv.className = "newdiv"
+    newdiv.id = 2
+    newdiv.style.background = 'red'
+    newdiv.style.padding = '20px'
+    newdiv.style.margin = '20px'
+    const testnode = document.createTextNode(text)
+    newdiv.appendChild(testnode)
+    document.body.appendChild(newdiv)
+   }
+
+   createElement('Create new div using nodes')
+
+   createElement('create element using the function and js code not in html')
+
+
+
+
+   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//    edit node
+
+function updateli(item,pos){
+
+const li = document.querySelector(`li:nth-child(${pos})`) // li:nth-child(2) for second child in li
+
+const newli = document.createElement('li')
+
+// li.innerHTML= 'hello';
+
+// li.textContent = 'hello'
+
+newli.appendChild(document.createTextNode(item))
+
+li.replaceWith(newli)
+}
+
+updateli('two',2)
+
+updateli('four',4)
+
+
+
+// ////////////////////////////////////////// ******************************* ///////////////////////////////////
+
+// delete node
+
+const deletenode = document.querySelector('li:first-child')
+deletenode.remove()
+
+
+
+
+</script>
+</html>
